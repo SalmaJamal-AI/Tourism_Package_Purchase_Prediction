@@ -29,10 +29,10 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # Save train and test files
-X_train.to_csv("tourism_project/model_building/Xtrain.csv", index=False)
-X_test.to_csv("tourism_project/model_building/Xtest.csv", index=False)
-y_train.to_csv("tourism_project/model_building/ytrain.csv", index=False)
-y_test.to_csv("tourism_project/model_building/ytest.csv", index=False)
+X_train.to_csv("Xtrain.csv", index=False)
+X_test.to_csv("Xtest.csv", index=False)
+y_train.to_csv("ytrain.csv", index=False)
+y_test.to_csv("ytest.csv", index=False)
 
 print("Data prepared: train/test splits written.")
 print("Train shape:", X_train.shape)
