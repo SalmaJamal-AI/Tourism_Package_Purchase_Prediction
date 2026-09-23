@@ -9,7 +9,7 @@ model = joblib.load(model_path)
 
 st.title("Tourism Package Prediction App")
 st.write("""
-This application predicts predicts whether a customer will purchase the newly introduced Wellness Tourism Package.
+This application predicts whether a customer will purchase the newly introduced Wellness Tourism Package.
 Enter the data below to get a prediction
 """)
 Age           = st.number_input("Age", 18, 100, 30)
