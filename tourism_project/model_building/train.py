@@ -19,10 +19,10 @@ mlflow.set_tracking_uri("http://localhost:5000")
 mlflow.set_experiment("Tourism_Poject_Production")
 
 # Xtrain/Xtest/ytrain/ytest are downloaded from the previous job's artifact
-X_train = pd.read_csv("/content/tourism_project/model_building/Xtrain.csv")
-X_test  = pd.read_csv("/content/tourism_project/model_building/Xtest.csv")
-y_train = pd.read_csv("/content/tourism_project/model_building/ytrain.csv").squeeze()
-y_test  = pd.read_csv("/content/tourism_project/model_building/ytest.csv").squeeze()
+X_train = pd.read_csv("tourism_project/model_building/Xtrain.csv")
+X_test  = pd.read_csv("tourism_project/model_building/Xtest.csv")
+y_train = pd.read_csv("tourism_project/model_building/ytrain.csv").squeeze()
+y_test  = pd.read_csv("tourism_project/model_building/ytest.csv").squeeze()
 
 # Define feature types
 numeric_features = [
@@ -120,7 +120,7 @@ with mlflow.start_run():
 
     # Save next to app.py so the Streamlit app can load it directly, and log
     # it as an MLflow artifact for traceability
-    model_path = "/content/tourism_project/deployment/best_tourism_package_purchase_model_v1.joblib"
+    model_path = "tourism_project/deployment/best_tourism_package_purchase_model_v1.joblib"
     joblib.dump(best_model, model_path)
     mlflow.log_artifact(model_path, artifact_path="model")
     print(f"Model saved to {model_path}")
