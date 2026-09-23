@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 # Load dataset
-df = pd.read_csv("/content/tourism_project/data/tourism.csv")
+df = pd.read_csv("tourism_project/data/tourism.csv")
 print("Dataset loaded successfully.")
 
 # Remove unnecassary, CustomerID and unnamed: 0, columns
@@ -29,10 +29,10 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # Save train and test files
-X_train.to_csv("/content/tourism_project/model_building/Xtrain.csv", index=False)
-X_test.to_csv("/content/tourism_project/model_building/Xtest.csv", index=False)
-y_train.to_csv("/content/tourism_project/model_building/ytrain.csv", index=False)
-y_test.to_csv("/content/tourism_project/model_building/ytest.csv", index=False)
+X_train.to_csv("tourism_project/model_building/Xtrain.csv", index=False)
+X_test.to_csv("tourism_project/model_building/Xtest.csv", index=False)
+y_train.to_csv("tourism_project/model_building/ytrain.csv", index=False)
+y_test.to_csv("tourism_project/model_building/ytest.csv", index=False)
 
 print("Data prepared: train/test splits written.")
 print("Train shape:", X_train.shape)
