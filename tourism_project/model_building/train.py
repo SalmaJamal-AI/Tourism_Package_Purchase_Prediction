@@ -16,13 +16,13 @@ import mlflow
 from sklearn.metrics import classification_report
 
 mlflow.set_tracking_uri("http://localhost:5000")
-mlflow.set_experiment("Tourism_Poject_Production")
+mlflow.set_experiment("Tourism_Project_Production")
 
 # Xtrain/Xtest/ytrain/ytest are downloaded from the previous job's artifact
-X_train = pd.read_csv("tourism_project/model_building/Xtrain.csv")
-X_test  = pd.read_csv("tourism_project/model_building/Xtest.csv")
-y_train = pd.read_csv("tourism_project/model_building/ytrain.csv").squeeze()
-y_test  = pd.read_csv("tourism_project/model_building/ytest.csv").squeeze()
+X_train = pd.read_csv("Xtrain.csv")
+X_test  = pd.read_csv("Xtest.csv")
+y_train = pd.read_csv("ytrain.csv").squeeze()
+y_test  = pd.read_csv("ytest.csv").squeeze()
 
 # Define feature types
 numeric_features = [
@@ -60,9 +60,9 @@ xgb_model = xgb.XGBClassifier(random_state=42)
 
 # Define hyperparameter grid
 param_grid = {
-    "xgbclassifier__n_estimators": [50, 100],
-    "xgbclassifier__max_depth": [2, 3],
-    "xgbclassifier__learning_rate": [0.05, 0.1],
+    "xgbclassifier__n_estimators": [50, 100, 150],
+    "xgbclassifier__max_depth": [3, 4, 5],
+    "xgbclassifier__learning_rate": [0.05, 0.1, 0.15]
 }
 
 # Model pipeline
