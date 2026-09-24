@@ -7,15 +7,17 @@ import joblib
 model_path = os.path.join(os.path.dirname(__file__), "best_tourism_package_purchase_model_v1.joblib")
 model = joblib.load(model_path)
 
+# Collect customer information
 st.title("Tourism Package Prediction App")
 st.write("""
 This application predicts whether a customer will purchase the newly introduced Wellness Tourism Package.
 Enter the data below to get a prediction
 """)
+
 Age           = st.number_input("Age", 18, 100, 30)
 TypeofContact = st.selectbox("Type of Contact", ["Company Invited", "Self Inquiry"])
 CityTier      = st.selectbox("City Tier", ["Tier 1", "Tier 2", "Tier 3"])
-mapping       = {"Tier 1": 1, "Tier 2": 2, "Tier 3": 3}
+mapping       = {"Tier 1": 1, "Tier 2": 2, "Tier 3": 3} # convert city label to numeric values
 CityTier      = mapping[CityTier]
 Occupation    = st.selectbox("Occupation", ["Salaried", "Freelancer", "Small Business", "Large Business"])
 Gender        = st.selectbox("Gender", ["Male", "Female"])
@@ -35,6 +37,7 @@ ProductPitched = st.selectbox("Product Pitched", ["Basic", "Delux", "King", "Sta
 NumberOfFollowups = st.number_input("Number Of Followups", min_value=1, value=3)
 DurationOfPitch = st.number_input("Duration of Pitch (minutes)", min_value=0, value=15)
 
+# create a dataframe 
 input_data = pd.DataFrame([{
     "Age": Age,
     "TypeofContact": TypeofContact,
@@ -56,6 +59,7 @@ input_data = pd.DataFrame([{
     "DurationOfPitch": DurationOfPitch
 }])
 
+# Purchase prediction using the trained model
 if st.button("Predict Purchase"):
     prediction = model.predict(input_data)[0]
     result = "Purchase" if prediction == 1 else "No Purchase"
