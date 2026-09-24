@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 df = pd.read_csv("tourism_project/data/tourism.csv")
 print("Dataset loaded successfully.")
 
-# Remove unnecassary, CustomerID and unnamed: 0, columns
+# Remove unnecessary columns that are not useful for prediction
 df.drop(columns=["CustomerID", "Unnamed: 0"], inplace=True)
 
 # Correct inconsistent Gender (Fe male, Female) values
@@ -23,7 +23,7 @@ target = "ProdTaken"
 X = df.drop(columns=[target])
 y = df[target]
 
-# stratify=y keeps the (imbalanced) failure ratio consistent across splits
+# stratify=y keeps the (imbalanced) purchase outcomes consistent across splits
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
 )
