@@ -95,6 +95,8 @@ with mlflow.start_run():
     # Store and evaluate the best model
     best_model = grid_search.best_estimator_
 
+    # Use a 0.45 probability threshold for converting predicted probabilities
+    # into class labels for evaluation
     classification_threshold = 0.45
 
     y_pred_train_proba = best_model.predict_proba(X_train)[:, 1]
@@ -103,6 +105,7 @@ with mlflow.start_run():
     y_pred_test_proba = best_model.predict_proba(X_test)[:, 1]
     y_pred_test = (y_pred_test_proba >= classification_threshold).astype(int)
 
+    # Evaluate the selected model using classification metrics
     train_report = classification_report(y_train, y_pred_train, output_dict=True)
     test_report = classification_report(y_test, y_pred_test, output_dict=True)
 
