@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-
+  # Job 1: Validate and register the raw dataset
   register-dataset:
     runs-on: ubuntu-latest
     steps:
@@ -28,6 +28,7 @@ jobs:
           name: registered-data
           path: tourism_project/data/tourism.csv
 
+  # Job 2: Clean the dataset and create train/test splits
   data-prep:
     needs: register-dataset
     runs-on: ubuntu-latest
@@ -50,6 +51,7 @@ jobs:
             ytrain.csv
             ytest.csv
 
+ # Job 3: Download the splits, train the model, and commit the model
   model-training:
     needs: data-prep
     runs-on: ubuntu-latest
