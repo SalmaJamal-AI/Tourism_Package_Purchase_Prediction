@@ -37,7 +37,7 @@ ProductPitched = st.selectbox("Product Pitched", ["Basic", "Delux", "King", "Sta
 NumberOfFollowups = st.number_input("Number Of Followups", min_value=1, value=3)
 DurationOfPitch = st.number_input("Duration of Pitch (minutes)", min_value=0, value=15)
 
-# create a dataframe 
+# create a dataframe
 input_data = pd.DataFrame([{
     "Age": Age,
     "TypeofContact": TypeofContact,
