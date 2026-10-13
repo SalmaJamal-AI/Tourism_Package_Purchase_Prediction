@@ -34,4 +34,4 @@ The project demonstrates how predictive analytics can support customer segmentat
 
 **Repository**
 
-View the source code and project files
+**View the source code and project files**
