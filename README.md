@@ -35,3 +35,9 @@ The project demonstrates how predictive analytics can support customer segmentat
 **Repository**
 
 [View the source code and project files](https://github.com/SalmaJamal-AI/Tourism_Package_Purchase_Prediction)
+
+## Project Notebook
+
+Explore the complete Jupyter notebook for data analysis, preprocessing, model development, hyperparameter tuning, and evaluation.
+
+[View the Jupyter Notebook](notebooks/TourismPackage_Advanced_MLOps_Project.ipynb)
