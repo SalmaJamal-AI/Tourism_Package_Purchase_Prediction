@@ -1,6 +1,6 @@
 # Tourism Package Purchase Prediction — End-to-End MLOps
 
-Project Overview
+**Project Overview**
 
 This project develops an end-to-end Machine Learning and MLOps pipeline to predict whether a customer will purchase a newly introduced Wellness Tourism Package offered by a travel company, Visit with Us.
 
@@ -8,30 +8,30 @@ The solution uses customer demographics, travel preferences, and sales interacti
 
 The project also incorporates GitHub Actions for CI/CD automation and MLflow for experiment tracking, demonstrating how machine learning workflows can be organized for repeatable model development and delivery.
 
-Key Features
+**Key Features**
 
-Data preprocessing: Numerical feature scaling and categorical feature encoding using scikit-learn pipelines.
+- **Data preprocessing:** Numerical feature scaling and categorical feature encoding using scikit-learn pipelines.
 
-Machine Learning: XGBoost classifier for binary purchase prediction.
+- **Machine Learning**: XGBoost classifier for binary purchase prediction.
 
-Hyperparameter optimization: GridSearchCV with cross-validation to identify suitable model configurations.
+- **Hyperparameter optimization:** GridSearchCV with cross-validation to identify suitable model configurations.
 
-Experiment tracking: MLflow to record model parameters, evaluation metrics, and model artifacts.
+- **Experiment tracking:** MLflow to record model parameters, evaluation metrics, and model artifacts.
 
-Model evaluation: Accuracy, precision, recall, and F1-score, with F1-score used as the primary metric for hyperparameter selection.
+- **Model evaluation:** Accuracy, precision, recall, and F1-score, with F1-score used as the primary metric for hyperparameter selection.
 
-CI/CD automation: GitHub Actions workflow to orchestrate data preparation, model training, evaluation, and model artifact handling.
+- **CI/CD automation:** GitHub Actions workflow to orchestrate data preparation, model training, evaluation, and model artifact handling.
 
-Prediction interface: Streamlit application that accepts customer information and predicts purchase or no purchase.
+- **Prediction interface:** Streamlit application that accepts customer information and predicts purchase or no purchase.
 
-Technology Stack
+**Technology Stack**
 
 Python | Pandas | scikit-learn | XGBoost | MLflow | Streamlit | Joblib | Git | GitHub Actions
 
-Business Value
+**Business Value**
 
 The project demonstrates how predictive analytics can support customer segmentation and targeted marketing by helping businesses prioritize prospective buyers. The automated workflow provides a foundation for reproducible model training, experiment tracking, and streamlined model updates.
 
-Repository
+**Repository**
 
 View the source code and project files
